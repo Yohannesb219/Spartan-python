@@ -1,4 +1,4 @@
-orkers={
+workers={
     "Miki": {"Age":19, "Salary":1500}
     }
 def employ(name,age,salary):
@@ -12,12 +12,13 @@ while True:
     if action=="add":
         name=input("Enter name:")
         age=int(input("Enter age:"))
-        if age>18:
-            salary=int(input("Enter salary"))
-            if salary>50000:
-                print("Too much!!!!!!!!!!")
-        else:
-            print("not eligable")
+        if age<= 18:
+            print("go home kid!!!!!!!!!!!")
+            continue
+        salary=int(input("Enter salary:"))
+        if salary>50000:
+            print("Too much!!!!!!!!!!!!!")
+            continue
         employ(name,age,salary)
     elif action=="del":
         name=input("Enter name ")
@@ -29,6 +30,6 @@ while True:
         break
     else:
         print("invalid input")
-print("List of currents employees:")
+print("\nList of currents employees:")
 for name , info in workers.items():
     print(f"{name}:Age={info['Age']}, Salary={info['Salary']}")
